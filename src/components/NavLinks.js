@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom';
 
 const NavLink = ({ currentPage, handlePageChange, page }) => {
   const onClick = () => handlePageChange(page);
@@ -6,9 +7,12 @@ const NavLink = ({ currentPage, handlePageChange, page }) => {
   const className = currentPage === page ? 'nav-link active' : 'nav-link';
   const data = { onClick, to, className };
 
+  // Standard App <a href="></a>"
+  // React Router <Link></Link>
+
   return (
     <li className="nav-item">
-      <a {...data}>{page}</a>
+      <Link {...data}>{page}</Link>
     </li>
   );
 };
